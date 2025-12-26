@@ -112,6 +112,10 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.abstract-content {
+    line-height: 0.8;   /* 越小越紧，常用 1.2~1.5 */
+    margin-bottom: 0.4em !important;
+}
 
 /* Publication Content Styling */
 .publication-title {
@@ -251,6 +255,71 @@ body {
 .publication-body img:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+/* Abstract text wrap layout */
+.abstract-wrap{
+    text-align: left;              /* 核心 */
+    hyphens: auto;                 /* 允许断词（英文） */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+
+/* Right floating teaser image */
+.abstract-float-figure{
+    float: right;
+    width: 70%;              /* 控制“占半面”程度 */
+    max-width: 400px;
+    margin: 0.5rem 0 0 0.5rem; /* 上 右 下 左 */
+}
+
+.abstract-float-figure img{
+    width: 100%;
+    height: auto;
+    display: block;
+    
+}
+
+/* Clear float at the end to avoid layout issues */
+
+
+.abstract-wrap::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.results-section figure img{
+    max-width: 90%;
+}
+
+/* Results figures: center + keep aspect ratio */
+.result-figure img{
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Large figures: almost full width */
+.result-figure-lg img{
+    width: 100%;
+    max-width: 150%;
+}
+
+/* Medium figures: intentionally smaller */
+.result-figure-ms img{
+    width: 100%;
+    max-width: 100%;
+}
+.result-figure-md img{
+    width: 100%;
+    max-width: 60%;
+}
+
+.results-section .content p{
+    font-size: 1.05rem;   /* 比 abstract 略小 */
+    line-height: 1.5;
 }
 
 .results-carousel {
@@ -748,6 +817,10 @@ a:focus {
     box-shadow: none !important;
   }
 }
+
+
+
+
 
 
 
